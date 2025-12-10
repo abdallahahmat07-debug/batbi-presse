@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PresseActu </title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4f8ff;
+      --card: #fff;
+      --muted: #637081;
+      --accent: #0b5ed7;
+      --dark: #072a4b;
+      --maxw: 1200px;
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin: 0;
+      background: var(--bg);
+      color: #04243a;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .topbar {
+      background: linear-gradient(180deg, var(--dark), var(--accent));
+      color: white;
+      padding: 18px 0;
+      box-shadow: 0 4px 18px rgba(8, 24, 48, 0.12)
+    }
+
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 18px
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      justify-content: space-between
+    }
+
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center
+    }
+
+    .logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 8px;
+      background: white;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      box-shadow: 0 2px 8px rgba(7, 32, 64, 0.12);
+    }
+
+    .site-title {
+      font-weight: 700;
+      font-size: 18px
+    }
+
+    nav.main-nav {
+      margin-top: 10px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    nav.main-nav a {
+      color: rgba(255, 255, 255, 0.95);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-weight: 600
+    }
+
+    nav.main-nav a:hover {
+      background: rgba(255, 255, 255, 0.06)
+    }
+
+    .hero {
+      max-width: var(--maxw);
+      margin: 20px auto;
+      padding: 12px
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 18px
+    }
+
+    .hero-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(16, 36, 63, 0.08)
+    }
+
+    .hero-media {
+      height: 320px;
+      background: linear-gradient(90deg, rgba(11, 94, 215, 0.08), transparent);
+      display: flex;
+      align-items: flex-end;
+      padding: 18px;
+      color: var(--accent)
+    }
+
+    .hero-media h1 {
+      margin: 0;
+      color: var(--dark);
+      font-size: 24px
+    }
+
+    .list-card {
+      padding: 16px
+    }
+
+    .list-card h3 {
+      margin: 0 0 12px 0
+    }
+
+    .main {
+      max-width: var(--maxw);
+      margin: 12px auto;
+      padding: 0 18px 60px
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 2fr 380px;
+      gap: 22px
+    }
+
+    .card {
+      background: var(--card);
+      padding: 16px;
+      border-radius: 10px;
+      box-shadow: 0 4px 18px rgba(16, 36, 63, 0.06)
+    }
+
+    .articles {
+      display: grid;
+      gap: 14px
+    }
+
+    .article-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #eef3fb
+    }
+
+    .article-item img {
+      width: 150px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 6px
+    }
+
+    .article-meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 6px
+    }
+
+    .article-title {
+      font-weight: 700;
+      margin: 0 0 6px 0
+    }
+
+    .article-excerpt {
+      margin: 0;
+      color: #2b3b46
+    }
+
+    .sidebar .section {
+      margin-bottom: 16px
+    }
+
+    .sidebar h4 {
+      margin: 0 0 8px 0
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-weight: 600
+    }
+
+    .btn.ghost {
+      background: transparent;
+      color: var(--dark);
+      border: 1px solid #d6e6ff
+    }
+
+    .admin-controls {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px
+    }
+
+    .admin-controls button {
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      font-weight: 700
+    }
+
+    .admin-controls .edit {
+      background: #0b84d7;
+      color: white
+    }
+
+    .admin-controls .del {
+      background: #d64545;
+      color: white
+    }
+
+    .admin-controls .view {
+      background: #2b6f9e;
+      color: white
+    }
+
+    .search {
+      display: flex;
+      gap: 8px
+    }
+
+    .search input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #dbe9ff
+    }
+
+    .pager {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 12px
+    }
+
+    .pager button {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: none;
+      background: #0b67c0;
+      color: white;
+      cursor: pointer
+    }
+
+    .panel {
+      display: none;
+      position: fixed;
+      inset: 0;
+      align-items: center;
+      justify-content: center;
+      background: rgba(3, 10, 25, 0.45)
+    }
+
+    .panel .box {
+      background: var(--card);
+      width: 720px;
+      max-width: 95%;
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: 0 12px 36px rgba(7, 32, 64, 0.28)
+    }
+
+    .field {
+      margin-bottom: 10px
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #dbe9ff;
+      font-size: 14px
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 700;
+      color: #0b3a63
+    }
+
+    @media (max-width:980px) {
+      .hero-grid {
+        grid-template-columns: 1fr
+      }
+
+      .grid {
+        grid-template-columns: 1fr
+      }
+
+      .article-item {
+        grid-template-columns: 1fr
+      }
+
+      .article-item img {
+        width: 100%;
+        height: 180px
+      }
+
+      .brand-row {
+        flex-direction: column;
+        align-items: start;
+        gap: 8px
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="brand-row">
+        <div class="brand" style="align-items:center">
+          <div class="logo">presse</div>
+          <div>
+            <div class="site-title">PresseActu</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.85)">Votre voix, notre mission</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center">
+          <button class="btn ghost" onclick="openAdmin()">Administrateurs</button>
+          <button class="btn" id="subscribeBtn" onclick="alert('Prototype : abonnement simulé')">S'abonner</button>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Menu principal" style="margin-top:12px">
+        <a href="#" onclick="filterCategory('Toutes')">Accueil</a>
+        <a href="actualites.html" onclick="filterCategory('Actualités')">Actualités internationales</a>
+        <a href="droits-humains.html">Droits Humains</a>
+        <a href="geopolitique.html">Géopolitique</a>
+        <a href="analyses-opinions.html">Analyses & Opinions</a>
+        <a href="traites-organisations.html">Traités & Organisations</a>
+        <a href="about.html">À propos</a>
+      </nav>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-card">
+        <div class="hero-media" id="heroMain" style="background-image: url('Logo.PNG'); background-size: cover; background-position: center;">
+          <div>
+            <h1> </h1>
+            <h1 id="heroTitle" style="background-color: white;margin-bottom: -10px;" >Bienvenue — Actualités & analyses en droits internationaux</h1>
+            <p id="heroLead" style="color:var(--muted);margin-top:8px;background-color: white;margin-bottom: -20px;">Analyses, ressources et enquêtes pour étudiants,
+              chercheurs et praticiens.</p>
+          </div>
+        </div>
+        <div class="list-card">
+          <h3>À la une</h3>
+          <div id="featuredList"></div>
+        </div>
+      </div>
+      <aside class="card">
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div>
+            <h4 style="margin:0 0 6px 0">Recherche</h4>
+            <div class="search">
+              <input id="searchInput" placeholder="Rechercher un article, un mot-clé…" oninput="onSearch()" />
+              <button class="btn ghost" onclick="onSearch()">Rechercher</button>
+            </div>
+          </div>
+          <div>
+            <h4 style="margin:0 0 6px 0">Rubriques</h4>
+            <div style="display:flex;flex-wrap:wrap;gap:6px">
+              <button class="btn ghost" onclick="filterCategory('Toutes')">Toutes</button>
+              <button class="btn ghost" onclick="filterCategory('Droits humains')">Droits humains</button>
+              <button class="btn ghost" onclick="filterCategory('Géopolitique')">Géopolitique</button>
+              <button class="btn ghost" onclick="filterCategory('Analyses')">Analyses</button>
+              <button class="btn ghost" onclick="filterCategory('Traités')">Traités</button>
+            </div>
+          </div>
+          <div>
+            <h4 style="margin:0 0 6px 0">Articles populaires</h4>
+            <ol id="popularList" style="padding-left:18px;margin:0"></ol>
+          </div>
+          <div>
+            <h4 style="margin:0 0 6px 0">Newsletter</h4>
+            <input id="newsletterEmail" placeholder="Votre email" />
+            <button class="btn" onclick="subscribe()">S'abonner</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <main class="main">
+    <div class="container grid">
+      <div>
+       
+          <h3 style="margin-top:0">Derniers articles</h3>
+          <div class="articles" id="articlesContainer">
+            <div class="article-item">
+              <img src="         <div class="card">
+          <h3 style="margin-top:0">Derniers articles</h3>
+          <div class="articles" id="articlesContainer">
+            
+            <!-- ARTICLE SPECIAL - LE BAOBAB -->
+            <div class="article-item" style="border: 2px solid var(--accent); background: #f8fafd;">
+              <div style="width:150px;height:100px;border-radius:6px; background: linear-gradient(135deg, var(--accent), var(--dark)); display: flex; align-items: center; justify-content: center;">
+                <div style="color: white; font-size: 32px; font-weight: bold; text-align: center;">
+                  B<br>
+                  <div style="font-size: 12px; margin-top: 5px;">BAOBAB</div>
+                </div>
+              </div>
+              <div>
+                <div class="article-meta" style="color: var(--accent); font-weight: 600;">📰 JOURNAL SPÉCIAL | N°001 | 07/12/2025</div>
+                <div class="article-title" style="color: var(--dark);">LE BAOBAB : Élection présidentielle - Tout est prêt sauf l'essentiel</div>
+                <div class="article-excerpt">
+                  <div style="margin-bottom: 8px;">• Arrêté publié, date et candidats inconnus</div>
+                  <div style="margin-bottom: 8px;">• MiniVote : première élection 100% en ligne</div>
+                  <div>• Questions sur sécurité et accessibilité</div>
+                </div>
+                <div style="margin-top: 12px;">
+                  <button class="btn ghost" onclick="alert('Journal LE BAOBAB - Édition complète disponible')" style="background: var(--accent); color: white; border: none;">
+                    📖 Lire le journal complet
+                  </button>
+                  <span style="margin-left: 10px; font-size: 12px; color: var(--muted);">
+                    Journal du groupe BATBI
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!-- FIN ARTICLE SPECIAL -->
+            
+            <!-- Article existant 1 -->
+            <div class="article-item">
+              <img src="image.png" alt="Image 1" style="width:150px;height:100px;border-radius:6px;">
+              <div>
+                <h3 class="article-title">Coup d'État au Benin</h3>
+                <p class="article-excerpt">le gouvernement raconte ce qui s'est passé...</p>
+              </div>
+            </div>
+            
+            <!-- Article existant 2 -->
+            <div class="article-item">
+              <img src="IMES.webp" alt="Image 2" style="width:150px;height:100px;border-radius:6px;">
+              <div>
+                <h3 class="article-title">IMES</h3>
+                <p class="article-excerpt">Institut Mariste d'Enseignement Supérieur</p>
+              </div>
+            </div>
+            
+          </div>
+          <div class="pager" id="pager">
+            <button onclick="prevPage()">◀ Précédent</button>
+            <div style="align-self:center;color:var(--muted);padding:0 8px">Page <span id="pageNum">1</span></div>
+            <button onclick="nextPage()">Suivant ▶</button>
+          </div>
+        </div>      </div>
+      <aside class="sidebar">
+        <div class="card">
+          <h4 style="margin-top:0">À propos</h4>
+          <p style="color:var(--muted);margin:0">PresseActu est un prototype pédagogique dédié aux droits et relations
+            internationales — analyses, enquêtes et ressources.</p>
+        </div>
+        <div class="card" style="margin-top:16px">
+          <h4 style="margin-top:0">Contact</h4>
+          <p style="color:var(--muted);margin:0">contact@batbipresse.sn</p>
+        </div>   <!-- NOUVELLE SECTION - LE BAOBAB -->
+  <div class="card" style="margin-top:16px">
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+      <div style="background: var(--accent); color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+        B
+      </div>
+      <div>
+        <h4 style="margin:0">LE BAOBAB</h4>
+        <div style="font-size:12px;color:var(--muted)">Journal du groupe BATBI</div>
+      </div>
+    </div>
+    
+    <div style="border-left: 3px solid var(--accent); padding-left: 12px; margin: 10px 0;">
+      <h5 style="margin: 8px 0; color: var(--dark); font-size: 15px;">ÉLECTION : TOUT EST PRÊT SAUF L'ESSENTIEL</h5>
+      <p style="color: var(--muted); font-size: 13px; margin: 8px 0; line-height: 1.4;">
+        L'arrêté est publié, mais la date et les candidats restent inconnus.
+      </p>
+      <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+        <span style="font-size: 11px; color: var(--muted);">N°001</span>
+        <span style="font-size: 11px; color: var(--muted);">07/12/2025</span>
+      </div>
+    </div>
+    
+    <div style="background: #f0f7ff; padding: 10px; border-radius: 6px; margin: 10px 0;">
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
+        <span style="font-size: 16px;">🏛️</span>
+        <div style="font-size: 12px; color: var(--accent); font-weight: 600;">MINIVOTE</div>
+      </div>
+      <div style="font-size: 13px; color: var(--muted);">
+        Vote 100% en ligne • Première nationale • Questions sur sécurité
+      </div>
+    </div>
+    
+    <button class="btn ghost" style="width: 100%; margin-top: 10px; font-size: 13px; padding: 8px;" 
+            onclick="alert('Édition complète du LE BAOBAB disponible : Élection présidentielle, MiniVote, analyses exclusives.')">
+      📰 Lire l'édition complète
+    </button>
+  </div>
+  <!-- FIN NOUVELLE SECTION -->
+      </aside>
+    </div>
+  </main>
+
+  <!-- ADMIN PANEL -->
+  <div id="adminModal" class="panel" aria-hidden="true">
+    <div class="box">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+        <h3 style="margin:0">Administration</h3>
+        <button class="btn ghost" onclick="closeAdmin()">Fermer</button>
+      </div>
+      <div id="loginArea">
+        <div class="field"><label>Identifiant</label><input id="adminUser" placeholder="admin" /></div>
+        <div class="field"><label>Mot de passe</label><input id="adminPass" type="password" placeholder="123456" />
+        </div>
+        <div style="display:flex;gap:10px">
+          <button class="btn" onclick="adminLogin()">Se connecter</button>
+          <button class="btn ghost" onclick="closeAdmin()">Annuler</button>
+        </div>
+      </div>
+      <div id="panelArea" style="display:none;margin-top:12px">
+        <div class="field"><label>Titre</label><input id="aTitle" /></div>
+        <div class="field"><label>Rubrique</label><input id="aCategory" placeholder="Ex: Droits humains" /></div>
+        <div class="field"><label>Image (URL)</label><input id="aImage" placeholder="https://..." /></div>
+        <div class="field"><label>Résumé / chapeau</label><input id="aSummary" /></div>
+        <div class="field"><label>Contenu</label><textarea id="aContent" rows="6"></textarea></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn" onclick="publishArticle()">Publier</button>
+          <button class="btn ghost" onclick="logoutAdmin()">Se déconnecter</button>
+        </div>
+        <hr style="margin:12px 0" />
+        <div>
+          <h4 style="margin:0 0 8px 0">Articles (administration)</h4>
+          <div id="adminList" style="max-height:260px;overflow:auto"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    style="max-width:800px;margin:40px auto;padding:20px;background:white;border-radius:12px;box-shadow:0 4px 18px rgba(16,36,63,0.06)">
+    <h1 style="text-align:center;font-size:28px;margin-bottom:24px">PresseActu</h1>
+
+    <h2 style="font-size:22px;margin-bottom:16px">Ajouter un Article</h2>
+    <form action="create.php" method="POST" style="display:flex;flex-direction:column;gap:12px">
+      <input type="hidden" name="type" value="article">
+      <input type="text" name="title" placeholder="Titre" required
+        style="padding:12px;border-radius:8px;border:1px solid #dbe9ff">
+      <textarea name="content" placeholder="Contenu" required
+        style="padding:12px;border-radius:8px;border:1px solid #dbe9ff"></textarea>
+      <button type="submit"
+        style="padding:12px;border-radius:8px;background:var(--accent);color:white;border:none;cursor:pointer;font-weight:600">Ajouter</button>
+    </form>
+
+    <h2 style="font-size:22px;margin:24px 0 16px 0">Ajouter un Journal</h2>
+    <form action="create.php" method="POST" style="display:flex;flex-direction:column;gap:12px">
+      <input type="hidden" name="type" value="journal">
+      <input type="text" name="name" placeholder="Nom" required
+        style="padding:12px;border-radius:8px;border:1px solid #dbe9ff">
+      <textarea name="description" placeholder="Description" required
+        style="padding:12px;border-radius:8px;border:1px solid #dbe9ff"></textarea>
+      <button type="submit"
+        style="padding:12px;border-radius:8px;background:var(--accent);color:white;border:none;cursor:pointer;font-weight:600">Ajouter</button>
+    </form>
+
+    <h2 style="font-size:22px;margin:24px 0 16px 0">Voir les Articles et Journaux</h2>
+    <a href="read.php" style="color:var(--accent);text-decoration:underline">Voir la liste</a>
+  </div>
+
+  <script>
+    /* =========================
+       Multi-admin
+    ========================= */
+    const admins = [
+      { user: 'admin', pass: '123456' },
+      { user: 'superadmin', pass: 'abcdef' },
+      { user: 'john', pass: 'pass123' }
+    ];
+
+    /* =========================
+       Données articles & init
+    ========================= */
+    const LS_KEY = 'dri_articles_v2';
+    let articles = loadArticles();
+    let filtered = articles.slice();
+    let currentPage = 0;
+    const PER_PAGE = 5;
+    let currentFilter = 'Toutes';
+    let searchTerm = '';
+
+    // function loadArticles() {
+    //   try {
+    //     const raw = localStorage.getItem(LS_KEY);
+    //     if (!raw) {
+    //       const seed = [
+    //         { id: id(), title: "Protection des droits en temps de crise", summary: "Enjeux actuels et réponses des institutions.", content: "Analyse détaillée...", category: "Droits humains", image: "", date: new Date().toISOString(), views: 12, author: "admin" },
+    //         { id: id(), title: "Diplomatie régionale : nouveaux équilibres", summary: "Accords récents et impacts géopolitiques.", content: "Contenu complet...", category: "Géopolitique", image: "", date: new Date().toISOString(), views: 8, author: "superadmin" }
+    //       ];
+    //       localStorage.setItem(LS_KEY, JSON.stringify(seed));
+    //       return seed;
+    //     }
+    //     return JSON.parse(raw);
+    //   } catch (e) { console.error(e); return []; }
+    // }
+    function saveArticles() { localStorage.setItem(LS_KEY, JSON.stringify(articles)); }
+    function id() { return Math.random().toString(36).slice(2, 9); }
+    function formatDate(d) { const dt = new Date(d); return dt.toLocaleString(); }
+
+    /* =========================
+       Affichage articles
+    ========================= */
+    function renderHero() {
+      if (articles.length > 0) {
+        const a = articles[0];
+        document.getElementById('heroTitle').textContent = a.title;
+        document.getElementById('heroLead').textContent = a.summary || a.content.slice(0, 120);
+        const heroEl = document.getElementById('heroMain');
+        heroEl.style.backgroundImage = a.image ? `url(${a.image})` : '';
+      }
+    }
+    function renderFeaturedList() {
+      const el = document.getElementById('featuredList'); el.innerHTML = '';
+      articles.slice(0, 5).forEach(a => {
+        el.innerHTML += `<div style="padding:8px 0;border-bottom:1px dashed #eef6ff">
+      <a href="#" style="text-decoration:none;color:var(--dark)" onclick="openArticle('${a.id}')"><strong>${a.title}</strong></a>
+      <div class="article-meta">${a.category || 'Général'} • ${formatDate(a.date)}</div>
+    </div>`;
+      });
+    }
+    function applyFilters() {
+      searchTerm = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
+      filtered = articles.filter(a => {
+        const matchCat = (currentFilter === 'Toutes') || (a.category && a.category === currentFilter);
+        const text = (a.title + ' ' + (a.summary || '') + ' ' + (a.content || '')).toLowerCase();
+        const matchSearch = !searchTerm || text.includes(searchTerm);
+        return matchCat && matchSearch;
+      });
+      currentPage = 0;
+      renderArticles();
+    }
+    function renderArticles() {
+      const container = document.getElementById('articlesContainer');
+      container.innerHTML = '';
+      if (filtered.length === 0) { container.innerHTML = '<p style="color:var(--muted)">Aucun article trouvé.</p>'; document.getElementById('pageNum').textContent = 0; return; }
+      const start = currentPage * PER_PAGE;
+      const pageItems = filtered.slice(start, start + PER_PAGE);
+      pageItems.forEach((a) => {
+        const html = document.createElement('div');
+        html.className = 'article-item';
+        html.innerHTML = `<img src="${a.image || 'data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"250\"><rect width=\"100%\" height=\"100%\" fill=\"%23e9f1ff\" /><text x=\"50%\" y=\"50%\" dominant-baseline=\"middle\" text-anchor=\"middle\" font-size=\"18\" fill=\"%23074b8a\">Image</text></svg>'}" alt="" />
+      <div>
+        <div class="article-meta">${a.category || 'Général'} • ${formatDate(a.date)} • Par: ${a.author || 'N/A'}</div>
+        <div class="article-title">${a.title}</div>
+        <div class="article-excerpt">${a.summary || a.content.slice(0, 160)}</div>
+        <div style="margin-top:8px">
+          <button class="btn ghost" onclick="openArticle('${a.id}')">Lire</button>
+          ${(sessionStorage.getItem('isAdmin')) ? `<span class="admin-controls"><button class="edit" onclick="startEdit('${a.id}')">Modifier</button><button class="del" onclick="confirmDelete('${a.id}')">Supprimer</button></span>` : ''}
+        </div>
+      </div>`;
+        container.appendChild(html);
+      });
+      document.getElementById('pageNum').textContent = Math.floor(start / PER_PAGE) + 1;
+    }
+    function prevPage() { if (currentPage > 0) { currentPage--; renderArticles(); } }
+    function nextPage() { if ((currentPage + 1) * PER_PAGE < filtered.length) { currentPage++; renderArticles(); } }
+    function filterCategory(cat) { currentFilter = cat; applyFilters(); }
+    function onSearch() { applyFilters(); }
+    function openArticle(id) { alert('Affichage article ' + id + ' (prototype)'); }
+
+    /* =========================
+       Admin login
+    ========================= */
+    function openAdmin() { document.getElementById('adminModal').style.display = 'flex'; }
+    function closeAdmin() { document.getElementById('adminModal').style.display = 'none'; }
+    function adminLogin() {
+      const u = document.getElementById('adminUser').value.trim();
+      const p = document.getElementById('adminPass').value;
+      const found = admins.find(a => a.user === u && a.pass === p);
+      if (found) {
+        sessionStorage.setItem('isAdmin', u);
+        document.getElementById('loginArea').style.display = 'none';
+        document.getElementById('panelArea').style.display = 'block';
+        renderAdminList();
+        renderArticles();
+      } else alert('Identifiant ou mot de passe incorrect.');
+    }
+    function logoutAdmin() {
+      sessionStorage.removeItem('isAdmin');
+      document.getElementById('loginArea').style.display = 'block';
+      document.getElementById('panelArea').style.display = 'none';
+      renderArticles();
+    }
+
+    /* =========================
+       Admin article actions
+    ========================= */
+    function clearAdminForm() { document.getElementById('aTitle').value = ''; document.getElementById('aCategory').value = ''; document.getElementById('aSummary').value = ''; document.getElementById('aContent').value = ''; document.getElementById('aImage').value = ''; }
+    function publishArticle() {
+      const currentAdmin = sessionStorage.getItem('isAdmin');
+      if (!currentAdmin) return alert('Non autorisé');
+      const t = document.getElementById('aTitle').value.trim();
+      const cat = document.getElementById('aCategory').value.trim();
+      const img = document.getElementById('aImage').value.trim();
+      const sum = document.getElementById('aSummary').value.trim();
+      const cont = document.getElementById('aContent').value.trim();
+      if (!t || !cont) return alert('Titre et contenu obligatoires');
+      const newA = { id: id(), title: t, summary: sum, content: cont, category: cat, image: img, date: new Date().toISOString(), views: 0, author: currentAdmin };
+      articles.unshift(newA);
+      saveArticles();
+      clearAdminForm();
+      applyFilters();
+    }
+    function renderAdminList() {
+      const el = document.getElementById('adminList');
+      el.innerHTML = '';
+      articles.forEach(a => {
+        const div = document.createElement('div');
+        div.style.borderBottom = '1px solid #eef6ff';
+        div.style.padding = '6px 0';
+        div.innerHTML = `<strong>${a.title}</strong> • ${a.category || 'Général'} • ${formatDate(a.date)} • Par: ${a.author || 'N/A'}
+    <span style="float:right">
+      <button class="edit" onclick="startEdit('${a.id}')">Modifier</button>
+      <button class="del" onclick="confirmDelete('${a.id}')">Supprimer</button>
+    </span>`;
+        el.appendChild(div);
+      });
+    }
+    function startEdit(idA) {
+      const a = articles.find(x => x.id === idA);
+      if (!a) return;
+      document.getElementById('aTitle').value = a.title;
+      document.getElementById('aCategory').value = a.category;
+      document.getElementById('aSummary').value = a.summary;
+      document.getElementById('aContent').value = a.content;
+      document.getElementById('aImage').value = a.image;
+      // Supprimer l'article original pour "éditer"
+      articles = articles.filter(x => x.id !== idA);
+      saveArticles();
+      applyFilters();
+    }
+    function confirmDelete(idA) {
+      if (confirm('Confirmer la suppression ?')) {
+        articles = articles.filter(a => a.id !== idA);
+        saveArticles();
+        renderAdminList();
+        applyFilters();
+      }
+    }
+
+    /* =========================
+       Newsletter / abonnement
+    ========================= */
+    function subscribe() {
+      const email = document.getElementById('newsletterEmail').value.trim();
+      if (!email) return alert('Email obligatoire');
+      alert('Merci ! (prototype)');
+    }
+
+    /* =========================
+       Init
+    ========================= */
+    renderHero();
+    renderFeaturedList();
+    applyFilters();
+  </script>
+</body>
+
+</html>

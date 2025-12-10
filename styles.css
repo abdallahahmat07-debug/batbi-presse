@@ -1,0 +1,244 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin: 0;
+      background: var(--bg);
+      color: #04243a;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .topbar {
+      background: linear-gradient(180deg, var(--dark), var(--accent));
+      color: white;
+      padding: 18px 0;
+      box-shadow: 0 4px 18px rgba(8, 24, 48, 0.12)
+    }
+
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 18px
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      justify-content: space-between
+    }
+
+    .brand {
+      display: flex;
+      gap: 12px;
+      align-items: center
+    }
+
+    .logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 8px;
+      background: white;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      box-shadow: 0 2px 8px rgba(7, 32, 64, 0.12);
+    }
+
+    .site-title {
+      font-weight: 700;
+      font-size: 18px
+    }
+
+    nav.main-nav {
+      margin-top: 10px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap
+    }
+
+    nav.main-nav a {
+      color: rgba(255, 255, 255, 0.95);
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-weight: 600
+    }
+
+    nav.main-nav a:hover {
+      background: rgba(255, 255, 255, 0.06)
+    }
+
+
+h1 {
+    margin: 0;
+}
+
+main {
+    padding: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    width: calc(33.333% - 2rem);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Styles for the homepage */
+.intro {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.navigation {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.nav-links .button {
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-links .button:hover {
+    background-color: #0056b3;
+}
+
+/* Styles for the article gallery */
+.articles {
+    margin: 2rem 0;
+}
+
+.article-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.article-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.article-card img {
+    width: 100%;
+    height: auto;
+}
+
+.article-card h3 {
+    margin: 0.5rem 0;
+}
+
+.article-card p {
+    padding: 0 1rem 1rem;
+    color: #555;
+}
+
+/* Styles for the news sections */
+.news-section {
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: var(--card);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 18px rgba(16, 36, 63, 0.06);
+    text-align: center;
+}
+
+.news-section h2 {
+    color: var(--dark);
+    margin-bottom: 1rem;
+}
+
+.news-section img {
+    display: block;
+    margin: 0 auto 1rem;
+    max-width: 100%;
+    border-radius: var(--radius);
+}
+
+.news-section p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+/* Center align elements in the about section */
+.about-section {
+    text-align: center;
+}
+
+.about-section img {
+    margin: 0 auto;
+}
+
+:root {
+      --bg: #f4f8ff;
+      --card: #fff;
+      --muted: #637081;
+      --accent: #0b5ed7;
+      --dark: #072a4b;
+      --maxw: 1200px;
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+/* Set hero text color to white */
+.hero-media h1, .hero-media p {
+    color: white;
+}

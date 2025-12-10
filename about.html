@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PresseActu </title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="container">
+            <div class="brand-row">
+                <div class="brand" style="align-items:center">
+                    <div class="logo">Presse</div>
+                    <div>
+                        <div class="site-title">PresseActu</div>
+                        <div style="font-size:13px;color:rgba(255,255,255,0.85)">Votre voix, notre mission</div>
+                    </div>
+                </div>
+                <div style="display:flex;gap:10px;align-items:center">
+                    <button class="btn ghost" onclick="openAdmin()">Administrateurs</button>
+                    <button class="btn" id="subscribeBtn"
+                        onclick="alert('Prototype : abonnement simulé')">S'abonner</button>
+                </div>
+            </div>
+            <nav class="main-nav" aria-label="Menu principal" style="margin-top:12px">
+                <a href="home.html" onclick="filterCategory('Toutes')">Accueil</a>
+                <a href="actualites.html" onclick="filterCategory('Actualités')">Actualités internationales</a>
+                <a href="#" onclick="filterCategory('Droits humains')">Droits humains</a>
+                <a href="#" onclick="filterCategory('Géopolitique')">Géopolitique</a>
+                <a href="#" onclick="filterCategory('Analyses')">Analyses & Opinions</a>
+                <a href="#" onclick="filterCategory('Traités')">Traités & Organisations</a>
+                <a href="about.html">À propos</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="about container fond-bleu-clair padded w-80">
+            <h2>À propos de nous</h2>
+            <p>Le groupe de presse porte le nom BATBI et adopte une identité visuelle fondée sur le bleu foncé et le
+                blanc, des couleurs qui traduisent notre mission et nos valeurs. Le bleu foncé symbolise la crédibilité,
+                la transparence et la fiabilité, qualités essentielles pour une presse chargée d’informer et d’éclairer
+                les citoyens durant une élection présidentielle. Le blanc représente la neutralité, la clarté et la
+                pureté de l’information, rappelant notre engagement à fournir des contenus justes, équilibrés et exempts
+                de manipulation. Le logo composé d’un microphone stylisé incarne notre rôle de porte-voix du public, de
+                relais impartial des faits et de garant du débat démocratique. Ensemble, ces éléments illustrent notre
+                volonté d’être une presse moderne, professionnelle et résolument ancrée dans la mission de servir
+                l’intérêt général.</p>
+        </section>
+        <section class="about-section container padded w-80">
+            <h2>Notre Engagement</h2>
+            <img src="IMG_5215.jpeg.jpg" alt="Engagement" style="width:100%;max-width:600px;border-radius:8px;">
+            <p>Nous nous engageons à fournir des informations fiables et impartiales, tout en respectant les valeurs fondamentales de la liberté de la presse et de la transparence.</p>
+        </section>
+        <!-- Adding a new section about services -->
+        <section id="nos-services" class="container padded w-80">
+            <h2>NOS SERVICES</h2>
+            <h3>LA PRESSE TÉLÉVISÉE (ECHOSTV)</h3>
+            <p>Sur le canal 38, nous diffusons débats entre candidats, reportages en direct, interviews exclusives et bulletins d'information réguliers. Notre équipe mobile couvre les événements clés de la campagne en temps réel.</p>
+            <h3>LA PRESSE WEB (PRESSEACTU)</h3>
+            <p>Notre portail en ligne <a href="http://www.presseactu.sn" target="_blank">www.presseactu.sn</a> propose l'actualité en continu, live-blogs pendant les événements importants, infographies interactives et contenu multimédia. Suivez l'élection minute par minute sur tous vos appareils.</p>
+            <h3>LA PRESSE ÉCRITE (LE BAOBAB)</h3>
+            <p>Notre journal hebdomadaire offre analyses approfondies, décryptages des programmes et reportages de terrain. Chaque édition inclut infographies, comparatifs et notre rubrique "Le Vérif'" pour une information complète et vérifiée.</p>
+        </section>
+    </main>
+</body>
+
+</html>

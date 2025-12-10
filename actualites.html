@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualités Internationales - presseActu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="topbar">
+    <div class="container">
+      <div class="brand-row">
+        <div class="brand" style="align-items:center">
+          <div class="logo">presse</div>
+          <div>
+            <div class="site-title">PresseActu</div>
+            <div style="font-size:13px;color:rgba(255,255,255,0.85)">Votre voix, notre mission</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center">
+          <button class="btn ghost" onclick="openAdmin()">Administrateurs</button>
+          <button class="btn" id="subscribeBtn" onclick="alert('Prototype : abonnement simulé')">S'abonner</button>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="Menu principal" style="margin-top:12px">
+        <a href="home.html" onclick="filterCategory('Toutes')">Accueil</a>
+        <a href="actualites.html" onclick="filterCategory('Actualités')">Actualités internationales</a>
+        <a href="#" onclick="filterCategory('Droits humains')">Droits humains</a>
+        <a href="#" onclick="filterCategory('Géopolitique')">Géopolitique</a>
+        <a href="#" onclick="filterCategory('Analyses')">Analyses & Opinions</a>
+        <a href="#" onclick="filterCategory('Traités')">Traités & Organisations</a>
+        <a href="about.html">À propos</a>
+      </nav>
+    </div>
+  </header>
+    <main>
+        <section class="news-section">
+            <h2>Actualités du Bénin</h2>
+            <img src="image.png" alt="Actualité du Bénin" style="width:100%;max-width:600px;border-radius:8px;">
+            <h1>Coup d'Etat déjoué au Bénin : le gouvernement raconte ce qui s'est passé (Conseil des ministres)</h1>
+            <p>
+                Le Conseil des Ministres s'est tenu en séance extraordinaire ce lundi 8 décembre 2025, sous la
+                présidence de Monsieur Patrice TALON, Président de la République. La séance a été élargie aux ministres
+                conseillers et au haut commandement des Forces de Défense et de Sécurité.</p>
+        </section>
+        <section class="news-section">
+            <h2>Actualités Européennes</h2>
+            <p>Les enjeux géopolitiques et économiques en Europe continuent de façonner les relations internationales.
+                Suivez les dernières informations sur les décisions politiques majeures et leurs impacts globaux.</p>
+        </section>
+        <section class="news-section">
+            <h2>Actualités Asiatiques</h2>
+            <p>Avec une croissance rapide et des transformations majeures, l'Asie est au cœur des discussions
+                internationales. Explorez les actualités sur les innovations, les conflits et les collaborations dans
+                cette région dynamique.</p>
+        </section>
+        <!-- SECTION LE BAOBAB -->
+        <section class="news-section" style="background: linear-gradient(135deg, #0b5ed7, #072a4b); color: white;">
+          <div style="max-width: 800px; margin: 0 auto;">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+              <div style="background: white; color: #0b5ed7; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 18px;">
+                B
+              </div>
+              <div>
+                <h2 style="margin: 0; color: white;">LE BAOBAB</h2>
+                <div style="font-size: 14px; color: rgba(255,255,255,0.85);">Édition Spéciale Pré-Electorale | N°001 | 07/12/2025</div>
+              </div>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; margin: 20px 0;">
+              <h3 style="margin-top: 0; color: white;">ÉLECTION PRÉSIDENTIELLE : TOUT EST PRÊT SAUF L'ESSENTIEL</h3>
+              <p style="line-height: 1.6; font-size: 16px;">
+                Le ministre de l'Intérieur a publié l'arrêté organisant l'élection présidentielle, 
+                marquant une étape importante dans la préparation du scrutin. Cependant, plusieurs 
+                éléments cruciaux restent dans l'ombre : la date exacte du scrutin, la liste définitive 
+                des candidats et la publication de leurs programmes électoraux.
+              </p>
+              
+              <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 200px;">
+                  <div style="font-size: 14px; color: rgba(255,255,255,0.9); margin-bottom: 8px;">🏛️ MINIVOTE</div>
+                  <div style="font-size: 13px; color: rgba(255,255,255,0.7);">
+                    • Vote 100% en ligne<br>
+                    • Première nationale<br>
+                    • Questions sur sécurité et accès
+                  </div>
+                </div>
+                
+                <div style="flex: 1; min-width: 200px;">
+                  <div style="font-size: 14px; color: rgba(255,255,255,0.9); margin-bottom: 8px;">📅 PROCHAINES ÉTAPES</div>
+                  <div style="font-size: 13px; color: rgba(255,255,255,0.7);">
+                    • Annonce de la date<br>
+                    • Dépôt des candidatures<br>
+                    • Publication des programmes
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 25px;">
+              <button onclick="alert('Consultez l\\'édition complète du journal LE BAOBAB')" 
+                      style="background: white; color: #0b5ed7; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 16px;">
+                📖 Lire l'édition complète du BAOBAB
+              </button>
+              <p style="font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 10px;">
+                Journal du groupe BATBI • "L'arbre de la parole juste"
+              </p>
+            </div>
+          </div>
+        </section>
+        <!-- FIN SECTION LE BAOBAB -->
+    </main>
+</body>
+
+</html>

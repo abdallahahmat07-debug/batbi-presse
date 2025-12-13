@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidats - BATBI Presse</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .candidats-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .candidats-title {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+        
+        .candidats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .candidat-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .candidat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .candidat-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #f1f1f1;
+            padding-bottom: 20px;
+        }
+        
+        .candidat-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 25px;
+            border: 5px solid #f8f9fa;
+        }
+        
+        .candidat-info h2 {
+            color: #2c3e50;
+            margin: 0 0 5px 0;
+            font-size: 1.8em;
+        }
+        
+        .candidat-info .parti {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 5px;
+        }
+        
+        .candidat-info .slogan {
+            color: #007bff;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        .candidat-section {
+            margin-bottom: 20px;
+        }
+        
+        .candidat-section h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+            border-left: 4px solid #007bff;
+            padding-left: 10px;
+        }
+        
+        .candidat-section p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .citation {
+            background: #f8f9fa;
+            padding: 20px;
+            border-left: 4px solid #007bff;
+            margin: 20px 0;
+            font-style: italic;
+            color: #444;
+        }
+        
+        .campagne-reponse {
+            background: #e8f4fd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 3px solid #3498db;
+        }
+        
+        .question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .reponse {
+            color: #555;
+        }
+        
+        @media (max-width: 768px) {
+            .candidats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .candidat-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .candidat-photo {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+        
+        .retour-btn {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        
+        .retour-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header simplifié -->
+    <header style="background: #2c3e50; color: white; padding: 20px; text-align: center;">
+        <h1 style="margin: 0; font-size: 2em;">BATBI PRESSE</h1>
+        <p style="margin: 5px 0 20px 0; opacity: 0.8;">Élections Présidentielles au Wakanda</p>
+        
+        <nav style="margin-top: 20px;">
+            <a href="home.html" style="color: white; margin: 0 15px; text-decoration: none;">Accueil</a>
+            <a href="actualites.html" style="color: white; margin: 0 15px; text-decoration: none;">Actualités</a>
+            <a href="candidats.html" style="color: #3498db; margin: 0 15px; text-decoration: none; font-weight: bold;">Candidats</a>
+            <a href="about.html" style="color: white; margin: 0 15px; text-decoration: none;">À propos</a>
+        </nav>
+    </header>
+
+    <div class="candidats-container">
+        <h1 class="candidats-title">🗳️ Candidats à l'Élection Présidentielle du Wakanda</h1>
+        
+        <div class="candidats-grid">
+            
+            <!-- Candidat 1 -->
+            <div class="candidat-card">
+                <div class="candidat-header">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80" 
+                         alt="Shuri Udaku" class="candidat-photo">
+                    <div class="candidat-info">
+                        <h2>Shuri Udaku</h2>
+                        <div class="parti">Parti du Progrès Technologique (PPT)</div>
+                        <div class="slogan">"L'Innovation au Service du Peuple"</div>
+                    </div>
+                </div>
+                
+                <div class="candidat-section">
+                    <h3>Biographie</h3>
+                    <p>Princesse héritière du Wakanda, ancienne directrice du Centre de Recherche et Développement. Diplômée des plus grandes universités internationales en ingénierie et intelligence artificielle.</p>
+                </div>
+                
+                <div class="citation">
+                    "Notre richesse ne se mesure pas seulement en vibranium, mais dans la capacité de notre peuple à innover et à construire l'avenir."
+                </div>
+                
+                <div class="candidat-section">
+                    <h3>Réponses aux Questions de Campagne</h3>
+                    
+                    <div class="campagne-reponse">
+                        <div class="question">Sur l'utilisation du vibranium :</div>
+                        <div class="reponse">"Je propose un contrôle démocratique des ressources en vibranium, avec 40% des bénéfices réinvestis dans l'éducation et la santé publique."</div>
+                    </div>
+                    
+                    <div class="campagne-reponse">
+                        <div class="question">Sur les relations internationales :</div>
+                        <div class="reponse">"Le Wakanda doit maintenir son indépendance tout en partageant ses avancées technologiques pour le bien de l'humanité."</div>
+                    </div>
+                    
+                    <div class="campagne-reponse">
+                        <div class="question">Sur l'économie :</div>
+                        <div class="reponse">"Création de 100 000 emplois dans les technologies vertes et l'intelligence artificielle d'ici 5 ans."</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Candidat 2 -->
+            <div class="candidat-card">
+                <div class="candidat-header">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80" 
+                         alt="M'Baku Jabari" class="candidat-photo">
+                    <div class="candidat-info">
+                        <h2>M'Baku Jabari</h2>
+                        <div class="parti">Parti des Traditions et Valeurs (PTV)</div>
+                        <div class="slogan">"Notre Force Réside dans Nos Traditions"</div>
+                    </div>
+                </div>
+                
+                <div class="candidat-section">
+                    <h3>Biographie</h3>
+                    <p>Chef de la tribu Jabari, ancien membre du Conseil des Anciens. Défenseur des traditions wakandaises et de l'autosuffisance nationale.</p>
+                </div>
+                
+                <div class="citation">
+                    "Un arbre sans racines ne peut porter de fruits. Notre puissance vient de notre histoire et de nos valeurs ancestrales."
+                </div>
+                
+                <div class="candidat-section">
+                    <h3>Réponses aux Questions de Campagne</h3>
+                    
+                    <div class="campagne-reponse">
+                        <div class="question">Sur l'utilisation du vibranium :</div>
+                        <div class="reponse">"Le vibranium doit rester sous contrôle strict des tribus wakandaises. Pas d'exportation sans accord unanime du Conseil."</div>
+                    </div>
+                    
+                    <div class="campagne-reponse">
+                        <div class="question">Sur les relations internationales :</div>
+                        <div class="reponse">"Priorité aux alliances régionales africaines. Prudence dans les relations avec les puissances occidentales."</div>
+                    </div>
+                    
+                    <div class="campagne-reponse">
+                        <div class="question">Sur l'économie :</div>
+                        <div class="reponse">"Investissement massif dans l'agriculture traditionnelle et l'artisanat local. Réduction de la dépendance technologique."</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="home.html" class="retour-btn">← Retour à l'Accueil</a>
+        </div>
+    </div>
+
+    <!-- Footer simplifié -->
+    <footer style="background: #f8f9fa; padding: 30px; text-align: center; margin-top: 50px; border-top: 1px solid #ddd;">
+        <p style="margin: 0; color: #666;">© 2024 BATBI Presse - Tous droits réservés</p>
+        <p style="margin: 10px 0 0 0; color: #888; font-size: 0.9em;">Édition spéciale Élections Wakanda</p>
+    </footer>
+
+</body>
+</html>

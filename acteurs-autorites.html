@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acteurs et Autorités - BATBI Presse</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
         .acteurs-container {
             max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
         
         .acteurs-title {
@@ -162,150 +164,250 @@
         .retour-btn:hover {
             background: #0056b3;
         }
+        
+        .info-attente {
+            color: #999;
+            font-style: italic;
+            margin-top: 10px;
+        }
+        
+        .navigation-buttons {
+            text-align: center;
+            margin: 40px 0;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-btn {
+            padding: 10px 25px;
+            background: #f8f9fa;
+            color: #2c3e50;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-btn:hover {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+        
+        .nav-btn.primary {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+        
+        .nav-btn.primary:hover {
+            background: #0056b3;
+        }
     </style>
 </head>
 <body>
-    <!-- Votre header existant -->
+    <!-- HEADER COMPLET -->
     <header class="topbar">
-        <!-- ... votre header actuel ... -->
-        <nav class="main-nav" aria-label="Menu principal" style="margin-top:12px">
-            <!-- AJOUTEZ CE LIEN DANS VOTRE NAVIGATION -->
-            <a href="acteurs-autorites.html">Acteurs & Autorités</a>
-            <!-- ... autres liens ... -->
-        </nav>
+        <div class="container">
+            <div class="brand-row">
+                <div class="brand" style="align-items:center">
+                    <div class="logo">Presse</div>
+                    <div>
+                        <div class="site-title">PresseActu</div>
+                        <div style="font-size:13px;color:rgba(255,255,255,0.85)">Votre voix, notre mission</div>
+                    </div>
+                </div>
+                <div style="display:flex;gap:10px;align-items:center">
+                    <button class="btn ghost" onclick="openAdmin()">Administrateurs</button>
+                    <button class="btn" id="subscribeBtn"
+                        onclick="alert('Prototype : abonnement simulé')">S'abonner</button>
+                </div>
+            </div>
+            <nav class="main-nav" aria-label="Menu principal" style="margin-top:12px">
+                <a href="home.html" onclick="filterCategory('Toutes')">Accueil</a>
+                <a href="actualites.html" onclick="filterCategory('Actualités')">Actualités internationales</a>
+                <a href="candidats.html">Candidats</a>
+                <a href="acteurs-autorites.html" style="font-weight: bold; color: #007bff;">Acteurs & Autorités</a>
+                <a href="droits-humains.html">Droits Humains</a>
+                <a href="geopolitique.html">Géopolitique</a>
+                <a href="analyses-opinions.html">Analyses & Opinions</a>
+                <a href="traites-organisations.html">Traités & Organisations</a>
+                <a href="about.html">À propos</a>
+            </nav>
+        </div>
     </header>
 
-    <div class="acteurs-container">
-        <h1 class="acteurs-title">🏛️ Acteurs et Autorités Électorales</h1>
-        
-        <!-- Carte des différentes autorités -->
-        <div class="sections-grid">
-            <div class="section-card">
-                <span class="status actif">ACTIF</span>
-                <h3>Ministère de l'Intérieur</h3>
-                <p>Organisation et sécurité du processus électoral.</p>
-                <a href="#ministere" class="voir-plus">↓ Voir détails</a>
+    <main>
+        <div class="acteurs-container">
+            <h1 class="acteurs-title">🏛️ Acteurs et Autorités Électorales</h1>
+            
+            <!-- Navigation rapide -->
+            <div class="navigation-buttons">
+                <a href="home.html" class="nav-btn primary">🏠 Accueil</a>
+                <a href="candidats.html" class="nav-btn">👥 Candidats</a>
+                <a href="actualites.html" class="nav-btn">📰 Actualités</a>
+                <a href="about.html" class="nav-btn">ℹ️ À propos</a>
             </div>
             
-            <div class="section-card inactive">
-                <span class="status attente">Bientôt</span>
-                <h3>CENA</h3>
-                <p>Commission Électorale Nationale Autonome.</p>
-                <p class="info-attente">Informations à venir</p>
-            </div>
-            
-            <div class="section-card inactive">
-                <span class="status attente">Bientôt</span>
-                <h3>Conseil Constitutionnel</h3>
-                <p>Validation des résultats électoraux.</p>
-                <p class="info-attente">Informations à venir</p>
-            </div>
-            
-            <div class="section-card inactive">
-                <span class="status attente">Bientôt</span>
-                <h3>Sociétés Civiles</h3>
-                <p>Observateurs indépendants et organisations citoyennes.</p>
-                <p class="info-attente">Informations à venir</p>
-            </div>
-            
-            <div class="section-card inactive">
-                <span class="status attente">Bientôt</span>
-                <h3>Cour Suprême</h3>
-                <p>Arbitrage des contentieux électoraux.</p>
-                <p class="info-attente">Informations à venir</p>
-            </div>
-            
-            <div class="section-card inactive">
-                <span class="status attente">Bientôt</span>
-                <h3>Observateurs Internationaux</h3>
-                <p>Missions d'observation des partenaires internationaux.</p>
-                <p class="info-attente">Informations à venir</p>
-            </div>
-        </div>
-
-        <!-- Section Ministère de l'Intérieur (COMPLÈTE) -->
-        <section id="ministere" class="minister-profile">
-            <div class="minister-header">
-                <img src="aziz.jpg" alt="Aziz Dieng" class="minister-photo">
-                <div class="minister-info">
-                    <h2>Aziz Dieng</h2>
-                    <p class="minister-title">Ministre de l'Intérieur de la République du Wakanda</p>
-                    <p class="minister-motto">"Sécurité, Innovation, Transparence"</p>
+            <!-- Carte des différentes autorités -->
+            <div class="sections-grid">
+                <div class="section-card">
+                    <span class="status actif">ACTIF</span>
+                    <h3>Ministère de l'Intérieur</h3>
+                    <p>Organisation et sécurité du processus électoral.</p>
+                    <a href="#ministere" class="voir-plus">↓ Voir détails</a>
+                </div>
+                
+                <div class="section-card inactive">
+                    <span class="status attente">Bientôt</span>
+                    <h3>CENA</h3>
+                    <p>Commission Électorale Nationale Autonome.</p>
+                    <p class="info-attente">Informations à venir</p>
+                </div>
+                
+                <div class="section-card inactive">
+                    <span class="status attente">Bientôt</span>
+                    <h3>Conseil Constitutionnel</h3>
+                    <p>Validation des résultats électoraux.</p>
+                    <p class="info-attente">Informations à venir</p>
+                </div>
+                
+                <div class="section-card inactive">
+                    <span class="status attente">Bientôt</span>
+                    <h3>Sociétés Civiles</h3>
+                    <p>Observateurs indépendants et organisations citoyennes.</p>
+                    <p class="info-attente">Informations à venir</p>
+                </div>
+                
+                <div class="section-card inactive">
+                    <span class="status attente">Bientôt</span>
+                    <h3>Cour Suprême</h3>
+                    <p>Arbitrage des contentieux électoraux.</p>
+                    <p class="info-attente">Informations à venir</p>
+                </div>
+                
+                <div class="section-card inactive">
+                    <span class="status attente">Bientôt</span>
+                    <h3>Observateurs Internationaux</h3>
+                    <p>Missions d'observation des partenaires internationaux.</p>
+                    <p class="info-attente">Informations à venir</p>
                 </div>
             </div>
-            
-            <div class="minister-content">
-                <h3>Discours sur MINIVOTE</h3>
-                <div class="speech-excerpt">
-                    <p><strong>"Mesdames et Messieurs, concitoyens,</strong></p>
-                    <p>L'histoire de la démocratie est une histoire d'évolution. Aujourd'hui, notre nation prend un virage décisif vers l'avenir. En ma qualité de Ministre de l'Intérieur, je suis fier d'annoncer que cette élection présidentielle sera administrée par notre nouvelle plateforme nationale : MINIVOTE."</p>
-                    
-                    <h4>Mon Expertise au Cœur de la Gouvernance Numérique</h4>
-                    <p>"Ma formation en Sciences Politiques et ma spécialisation en Gouvernance de la Sécurité Intérieure ont toujours souligné un impératif : la sécurité et la gouvernance doivent évoluer avec la technologie. La plateforme MINIVOTE est l'incarnation de cette vision."</p>
-                    
-                    <h4>Mon Triple Engagement avec MINIVOTE</h4>
-                    <p>"L'adoption de MINIVOTE ne remplace pas les valeurs démocratiques ; elle les renforce. Mon engagement se décline en trois axes :</p>
-                    <ol>
-                        <li><strong>Sécurité Démocratique 360°</strong> : Sécurité physique et numérique</li>
-                        <li><strong>Neutralité Inébranlable</strong> : Algorithme impartial codé pour la loi</li>
-                        <li><strong>Confiance Numérique Rétablie</strong> : Traçabilité et vérification</li>
-                    </ol>
-                    
-                    <p><em>"L'élection via MINIVOTE est une preuve de la maturité de notre démocratie. Elle montre que nous pouvons allier tradition républicaine et innovation technologique pour un avenir plus sûr et plus transparent."</em></p>
-                </div>
 
-                <h3>Parcours Professionnel</h3>
-                <div class="career-excerpt">
-                    <h4>Phase I : Serviteur de l'État (2012 – 2015)</h4>
-                    <p><strong>Conseiller Technique</strong> auprès du Secrétaire Général du Ministère de l'Intérieur</p>
-                    <ul>
-                        <li>Pilotage de la fusion de deux agences de lutte contre la criminalité transnationale</li>
-                        <li>Conception de la première stratégie nationale de lutte contre la cybermenace</li>
+            <!-- Section Ministère de l'Intérieur (COMPLÈTE) -->
+            <section id="ministere" class="minister-profile">
+                <div class="minister-header">
+                    <img src="aziz.jpg" alt="Aziz Dieng" class="minister-photo">
+                    <div class="minister-info">
+                        <h2>Aziz Dieng</h2>
+                        <p class="minister-title">Ministre de l'Intérieur de la République du Wakanda</p>
+                        <p class="minister-motto">"Sécurité, Innovation, Transparence"</p>
+                    </div>
+                </div>
+                
+                <div class="minister-content">
+                    <h3>Discours sur MINIVOTE</h3>
+                    <div class="speech-excerpt">
+                        <p><strong>"Mesdames et Messieurs, concitoyens,</strong></p>
+                        <p>L'histoire de la démocratie est une histoire d'évolution. Aujourd'hui, notre nation prend un virage décisif vers l'avenir. En ma qualité de Ministre de l'Intérieur, je suis fier d'annoncer que cette élection présidentielle sera administrée par notre nouvelle plateforme nationale : MINIVOTE.</p>
+                        
+                        <h4>Mon Expertise au Cœur de la Gouvernance Numérique</h4>
+                        <p>"Ma formation en Sciences Politiques et ma spécialisation en Gouvernance de la Sécurité Intérieure ont toujours souligné un impératif : la sécurité et la gouvernance doivent évoluer avec la technologie. La plateforme MINIVOTE est l'incarnation de cette vision.</p>
+                        
+                        <h4>Mon Triple Engagement avec MINIVOTE</h4>
+                        <p>"L'adoption de MINIVOTE ne remplace pas les valeurs démocratiques ; elle les renforce. Mon engagement se décline en trois axes :</p>
+                        <ol>
+                            <li><strong>Sécurité Démocratique 360°</strong> : Sécurité physique et numérique</li>
+                            <li><strong>Neutralité Inébranlable</strong> : Algorithme impartial codé pour la loi</li>
+                            <li><strong>Confiance Numérique Rétablie</strong> : Traçabilité et vérification</li>
+                        </ol>
+                        
+                        <p><em>"L'élection via MINIVOTE est une preuve de la maturité de notre démocratie. Elle montre que nous pouvons allier tradition républicaine et innovation technologique pour un avenir plus sûr et plus transparent."</em></p>
+                    </div>
+
+                    <h3>Parcours Professionnel</h3>
+                    <div class="career-excerpt">
+                        <h4>Phase I : Serviteur de l'État (2012 – 2015)</h4>
+                        <p><strong>Conseiller Technique</strong> auprès du Secrétaire Général du Ministère de l'Intérieur</p>
+                        <ul>
+                            <li>Pilotage de la fusion de deux agences de lutte contre la criminalité transnationale</li>
+                            <li>Conception de la première stratégie nationale de lutte contre la cybermenace</li>
+                        </ul>
+                        
+                        <h4>Phase II : Le Préfet Réformateur (2015 – 2019)</h4>
+                        <p><strong>Préfet de Région</strong> chargé de l'Ordre Public et du Développement Local</p>
+                        <ul>
+                            <li>Réduction significative des taux de délinquance urbaine</li>
+                            <li>Gestion réussie de crises majeures (inondations, mouvements sociaux)</li>
+                        </ul>
+                        
+                        <h4>Phase III : Cabinet du Gouvernement (2019 – 2022)</h4>
+                        <p><strong>Directeur de Cabinet Adjoint</strong> du Premier Ministre</p>
+                        <ul>
+                            <li>Négociation du budget de modernisation des équipements de police</li>
+                            <li>Participation à l'élaboration de la Loi-Cadre sur le Renseignement National</li>
+                        </ul>
+                        
+                        <h4>Phase IV : Ministre de l'Intérieur (Depuis 2022)</h4>
+                        <p><strong>Réalisations Majeures :</strong></p>
+                        <ul>
+                            <li>Réforme Électorale (MINIVOTE) : Introduction et sécurisation du vote numérique</li>
+                            <li>Stratégie de Lutte Contre la Criminalité Organisée</li>
+                            <li>Refonte de la Police de Proximité : Programme "Police Citoyenne"</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Message pour les autres sections -->
+            <div class="coming-soon">
+                <h3>📢 Autres Acteurs à Venir</h3>
+                <p>Les informations concernant les autres autorités et acteurs électoraux seront ajoutées progressivement.</p>
+                <p>BATBI Presse couvre l'ensemble des institutions impliquées dans le processus électoral.</p>
+                <p style="font-style: italic; margin-top: 15px;">Suivez nos mises à jour régulières</p>
+            </div>
+            
+            <!-- Bouton de retour -->
+            <div style="text-align: center; margin: 40px 0;">
+                <a href="home.html" class="retour-btn">← Retour à l'Accueil</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer style="background: #2c3e50; color: white; padding: 40px 0; margin-top: 60px;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 30px;">
+                <div>
+                    <h3 style="color: #fff; margin-bottom: 15px;">BATBI Presse</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">Votre source d'information fiable pour les élections présidentielles du Wakanda.</p>
+                </div>
+                <div>
+                    <h3 style="color: #fff; margin-bottom: 15px;">Navigation Rapide</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="home.html" style="color: rgba(255,255,255,0.8); text-decoration: none; line-height: 2;">Accueil</a></li>
+                        <li><a href="candidats.html" style="color: rgba(255,255,255,0.8); text-decoration: none; line-height: 2;">Candidats</a></li>
+                        <li><a href="acteurs-autorites.html" style="color: rgba(255,255,255,0.8); text-decoration: none; line-height: 2;">Acteurs & Autorités</a></li>
+                        <li><a href="actualites.html" style="color: rgba(255,255,255,0.8); text-decoration: none; line-height: 2;">Actualités</a></li>
                     </ul>
-                    
-                    <h4>Phase II : Le Préfet Réformateur (2015 – 2019)</h4>
-                    <p><strong>Préfet de Région</strong> chargé de l'Ordre Public et du Développement Local</p>
-                    <ul>
-                        <li>Réduction significative des taux de délinquance urbaine</li>
-                        <li>Gestion réussie de crises majeures (inondations, mouvements sociaux)</li>
-                    </ul>
-                    
-                    <h4>Phase III : Cabinet du Gouvernement (2019 – 2022)</h4>
-                    <p><strong>Directeur de Cabinet Adjoint</strong> du Premier Ministre</p>
-                    <ul>
-                        <li>Négociation du budget de modernisation des équipements de police</li>
-                        <li>Participation à l'élaboration de la Loi-Cadre sur le Renseignement National</li>
-                    </ul>
-                    
-                    <h4>Phase IV : Ministre de l'Intérieur (Depuis 2022)</h4>
-                    <p><strong>Réalisations Majeures :</strong></p>
-                    <ul>
-                        <li>Réforme Électorale (MINIVOTE) : Introduction et sécurisation du vote numérique</li>
-                        <li>Stratégie de Lutte Contre la Criminalité Organisée</li>
-                        <li>Refonte de la Police de Proximité : Programme "Police Citoyenne"</li>
-                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #fff; margin-bottom: 15px;">Contact</h3>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">Email: contact@batbipresse.com</p>
+                    <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">Téléphone: +221 33 123 45 67</p>
                 </div>
             </div>
-        </section>
-
-        <!-- Message pour les autres sections -->
-        <div class="coming-soon">
-            <h3>📢 Autres Acteurs à Venir</h3>
-            <p>Les informations concernant les autres autorités et acteurs électoraux seront ajoutées progressivement.</p>
-            <p>BATBI Presse couvre l'ensemble des institutions impliquées dans le processus électoral.</p>
-            <p style="font-style: italic; margin-top: 15px;">Suivez nos mises à jour régulières</p>
+            <div style="text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p style="color: rgba(255,255,255,0.6); margin: 0; font-size: 0.9em;">
+                    © 2024 BATBI Presse. Tous droits réservés. | Accrédité par le Ministère de l'Intérieur
+                </p>
+            </div>
         </div>
-        
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="home.html" class="retour-btn">← Retour à l'Accueil</a>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer style="background: #f8f9fa; padding: 30px; text-align: center; margin-top: 50px; border-top: 1px solid #ddd;">
-        <p style="margin: 0; color: #666;">© 2024 BATBI Presse - Tous droits réservés</p>
-        <p style="margin: 10px 0 0 0; color: #888; font-size: 0.9em;">Élection Présidentielle du Wakanda - Section Acteurs & Autorités</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

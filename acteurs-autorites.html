@@ -356,12 +356,13 @@
                     <div class="voir-plus">↓ Voir détails</div>
                 </div>
                 
-                <div class="section-card inactive">
-                    <span class="status attente">Bientôt</span>
-                    <h3>Cour Suprême</h3>
-                    <p>Arbitrage des contentieux électoraux.</p>
-                    <p class="info-attente">Informations à venir</p>
-                </div>
+             <!-- Carte Cour Suprême ACTIVE (à remplacer dans la grille .sections-grid) -->
+             <div class="section-card" onclick="document.getElementById('cour-supreme').scrollIntoView({behavior: 'smooth'})">
+                  <span class="status actif">ACTIF</span>
+                  <h3>Cour Suprême</h3>
+                  <p>Arbitrage des contentieux électoraux.</p>
+                  <div class="voir-plus">↓ Voir détails</div>
+               </div>
                 
                 <div class="section-card inactive">
                     <span class="status attente">Bientôt</span>
@@ -549,6 +550,69 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Section Cour Suprême -->
+<section id="cour-supreme" class="institution-card">
+    <div class="institution-header">
+        <div>
+            <h2 style="color: #2c3e50; margin: 0;">Cour Suprême de la République Wakan</h2>
+            <p class="profile-title">Arbitrage des contentieux et supervision du processus électoral</p>
+        </div>
+    </div>
+    
+    <div class="profile-content">
+        <h3>⚖️ Le Rôle de la Cour dans le Processus Électoral</h3>
+        
+        <div class="communique-section">
+            <div class="communique-title">Éclaircissons le chemin vers la démocratie</div>
+            
+            <p>La Cour Suprême supervise l'intégrité du processus électoral à chaque étape :</p>
+            
+            <div class="conditions-section">
+                <h4>Inscription des Électeurs</h4>
+                <p>Cette étape cruciale garantit que tous les citoyens éligibles sont correctement inscrits. <strong>La Cour veille à la transparence</strong> de ce processus pour éviter toute irrégularité.</p>
+            </div>
+            
+            <div class="conditions-section">
+                <h4>Campagne Électorale</h4>
+                <p>Les candidats présentent leurs programmes et dialoguent avec les électeurs. <strong>La Cour s'assure que cette période se déroule dans le respect des règles établies.</strong></p>
+            </div>
+            
+            <div class="conditions-section">
+                <h4>Vote et Proclamation des Résultats</h4>
+                <p>Le jour du scrutin, la Cour supervise pour <strong>garantir la sécurité et l'intégrité des votes</strong>. Après le dépouillement, c'est elle qui <strong>déclare les résultats officiels</strong>, dans un souci de transparence et d'équité.</p>
+            </div>
+            
+        </div>
+        
+        <h3>📄 Critères d'Acceptation des Recours Électoraux</h3>
+        
+        <div class="document-excerpt">
+            <p>Un <strong>recours électoral</strong> est une contestation formelle des résultats qui peut être déposée par les candidats ou les électeurs. La Cour examine chaque recours avec attention et impartialité.</p>
+            
+            <p><strong>Pour être examiné, un recours doit respecter ces critères essentiels :</strong></p>
+            <ul>
+                <li><strong>Délai de Soumission :</strong> Être soumis dans les délais spécifiés par la loi électorale. Le non-respect de ce délai peut entraîner le rejet.</li>
+                <li><strong>Justificatifs Requis :</strong> Être accompagné de documents clairs et pertinents, essentiels pour l'examen de la demande.</li>
+                <li><strong>Motifs Valides :</strong> Les motifs invoqués doivent être fondés sur des éléments concrets et vérifiables. La clarté est cruciale.</li>
+            </ul>
+        </div>
+        
+        <h3>❓ Questions Fréquemment Posées</h3>
+        
+        <div class="interview-questions">
+            <div class="question-item">
+                <div class="question">Comment voter ?</div>
+                <div class="reponse">Vous devez être inscrit sur les listes électorales. Le jour du scrutin, présentez-vous à votre bureau de vote avec une pièce d'identité. Assurez-vous de connaître votre circonscription.</div>
+            </div>
+            
+            <div class="question-item">
+                <div class="question">Quels sont les délais pour s'inscrire ?</div>
+                <div class="reponse">Les délais varient selon les élections. Il est conseillé de s'inscrire plusieurs semaines avant le scrutin. Consultez le site officiel pour les dates précises.</div>
+            </div>
+        </div>
+        </div>
+     </section>
 
             <!-- Section Société Civile -->
             <section id="societe-civile" class="profile-section">

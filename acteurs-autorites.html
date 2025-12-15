@@ -243,12 +243,6 @@
             border-bottom: 2px solid #f1f1f1;
         }
         
-        .institution-logo {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-        }
-        
         .communique-section {
             background: #f8f9fa;
             padding: 25px;
@@ -270,6 +264,20 @@
             border-radius: 5px;
             margin: 15px 0;
             border-left: 4px solid #28a745;
+        }
+        
+        .conditions-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .conditions-section h4 {
+            color: #2c3e50;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
         }
     </style>
 </head>
@@ -340,11 +348,12 @@
                     <div class="voir-plus">↓ Voir détails</div>
                 </div>
                 
-                <div class="section-card inactive">
-                    <span class="status attente">Bientôt</span>
+                <!-- NOUVELLE CARTE - CONSEIL CONSTITUTIONNEL -->
+                <div class="section-card" onclick="document.getElementById('conseil-constitutionnel').scrollIntoView({behavior: 'smooth'})">
+                    <span class="status actif">ACTIF</span>
                     <h3>Conseil Constitutionnel</h3>
-                    <p>Validation des résultats électoraux.</p>
-                    <p class="info-attente">Informations à venir</p>
+                    <p>Validation des candidatures et des résultats électoraux.</p>
+                    <div class="voir-plus">↓ Voir détails</div>
                 </div>
                 
                 <div class="section-card inactive">
@@ -477,6 +486,65 @@
                             <li>La transparence des opérations</li>
                             <li>La fiabilité des listes électorales</li>
                             <li>L'accessibilité du vote pour tous les citoyens</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- NOUVELLE SECTION : CONSEIL CONSTITUTIONNEL -->
+            <section id="conseil-constitutionnel" class="institution-card">
+                <div class="institution-header">
+                    <div>
+                        <h2 style="color: #2c3e50; margin: 0;">Conseil Constitutionnel de la République Wakandaise</h2>
+                        <p class="profile-title">Validation des candidatures et proclamation des résultats</p>
+                    </div>
+                </div>
+                
+                <div class="profile-content">
+                    <h3>📋 Communiqué Officiel - Conditions de recevabilité des candidatures</h3>
+                    
+                    <div class="communique-section">
+                        <div class="communique-title">RÉPUBLIQUE WAKANDAISE - Conseil Constitutionnel</div>
+                        
+                        <p><strong>Objet :</strong> Rappel des conditions de recevabilité des candidatures à l'élection présidentielle 2025</p>
+                        
+                        <p>Le conseil constitutionnel rappelle aux candidats potentiels et à l'opinion publique les conditions légales et constitutionnelles requises pour se présenter à l'élection présidentielle wakandaise.</p>
+                        
+                        <div class="conditions-section">
+                            <h4>I. Conditions générales d'éligibilité</h4>
+                            <ul>
+                                <li><strong>Nationalité :</strong> Être exclusivement de nationalité Wakandaise</li>
+                                <li><strong>Droits civiques et politiques :</strong> Jouir de ses droits civils et politiques</li>
+                                <li><strong>Âge :</strong> Avoir au moins 20 ans et au plus 25 ans le jour du scrutin</li>
+                                <li><strong>Langue :</strong> Savoir écrire, lire et parler couramment la langue officielle, le Français</li>
+                                <li><strong>Contrôle :</strong> Le conseil constitutionnel examine les dossiers et arrête la liste des candidatures recevables</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="conditions-section">
+                            <h4>II. Dossiers de candidature :</h4>
+                            <ul>
+                                <li>Photo</li>
+                                <li>Un programme</li>
+                                <li>Une déclaration d'honorabilité</li>
+                            </ul>
+                        </div>
+                        
+                        <p style="margin-top: 20px; font-weight: bold;">Le Conseil Constitutionnel assure le respect strict de ces conditions pour garantir la régularité et la légitimité du processus électoral.</p>
+                        
+                        <p style="text-align: right; font-style: italic; margin-top: 25px;">
+                            Pour le Conseil Constitutionnel,<br>
+                            Le Président du Conseil Constitutionnel
+                        </p>
+                    </div>
+                    
+                    <div class="document-excerpt">
+                        <h4>Rôle du Conseil Constitutionnel dans le processus électoral :</h4>
+                        <ul>
+                            <li><strong>Validation des candidatures :</strong> Vérification du respect des conditions d'éligibilité</li>
+                            <li><strong>Arbitrage des contentieux :</strong> Résolution des litiges liés à l'enregistrement des candidats</li>
+                            <li><strong>Proclamation des résultats :</strong> Validation et annonce officielle des résultats de l'élection présidentielle</li>
+                            <li><strong>Garantie de la constitutionnalité :</strong> Assurance que l'ensemble du processus respecte la Constitution</li>
                         </ul>
                     </div>
                 </div>

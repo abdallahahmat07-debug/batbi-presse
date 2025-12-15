@@ -34,6 +34,12 @@
             padding: 25px;
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             border-top: 5px solid #007bff;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
         }
         
         .section-card.inactive {
@@ -66,7 +72,7 @@
             color: #856404;
         }
         
-        .minister-profile {
+        .profile-section {
             background: white;
             border-radius: 10px;
             padding: 30px;
@@ -75,7 +81,7 @@
             border: 2px solid #2c3e50;
         }
         
-        .minister-header {
+        .profile-header {
             display: flex;
             gap: 30px;
             margin-bottom: 30px;
@@ -84,13 +90,13 @@
         }
         
         @media (max-width: 768px) {
-            .minister-header {
+            .profile-header {
                 flex-direction: column;
                 text-align: center;
             }
         }
         
-        .minister-photo {
+        .profile-photo {
             width: 200px;
             height: 250px;
             object-fit: cover;
@@ -98,46 +104,58 @@
             border: 3px solid #2c3e50;
         }
         
-        .minister-info h2 {
+        .profile-info h2 {
             color: #2c3e50;
             margin: 0 0 10px 0;
         }
         
-        .minister-title {
+        .profile-title {
             color: #007bff;
             font-weight: bold;
             font-size: 1.2em;
             margin-bottom: 10px;
         }
         
-        .minister-motto {
+        .profile-motto {
             color: #666;
             font-style: italic;
             font-size: 1.1em;
         }
         
-        .minister-content {
+        .profile-content {
             margin-top: 25px;
         }
         
-        .speech-excerpt, .career-excerpt {
+        .interview-questions {
+            margin-top: 25px;
+        }
+        
+        .question-item {
             background: #f8f9fa;
+            padding: 18px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 3px solid #28a745;
+        }
+        
+        .question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+        
+        .reponse {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .document-excerpt {
+            background: #e8f4fd;
             padding: 20px;
             border-radius: 8px;
             margin: 20px 0;
             border-left: 4px solid #007bff;
-        }
-        
-        .voir-plus {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        
-        .voir-plus:hover {
-            text-decoration: underline;
         }
         
         .coming-soon {
@@ -206,6 +224,53 @@
         .nav-btn.primary:hover {
             background: #0056b3;
         }
+        
+        .institution-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid #2c3e50;
+        }
+        
+        .institution-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f1f1f1;
+        }
+        
+        .institution-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+        
+        .communique-section {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid #28a745;
+        }
+        
+        .communique-title {
+            color: #155724;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .important-date {
+            background: #d4edda;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            border-left: 4px solid #28a745;
+        }
     </style>
 </head>
 <body>
@@ -254,31 +319,31 @@
             
             <!-- Carte des différentes autorités -->
             <div class="sections-grid">
-                <div class="section-card">
+                <div class="section-card" onclick="document.getElementById('ministere').scrollIntoView({behavior: 'smooth'})">
                     <span class="status actif">ACTIF</span>
                     <h3>Ministère de l'Intérieur</h3>
                     <p>Organisation et sécurité du processus électoral.</p>
-                    <a href="#ministere" class="voir-plus">↓ Voir détails</a>
+                    <div class="voir-plus">↓ Voir détails</div>
                 </div>
                 
-                <div class="section-card inactive">
-                    <span class="status attente">Bientôt</span>
-                    <h3>CENA</h3>
-                    <p>Commission Électorale Nationale Autonome.</p>
-                    <p class="info-attente">Informations à venir</p>
+                <div class="section-card" onclick="document.getElementById('dge-cena').scrollIntoView({behavior: 'smooth'})">
+                    <span class="status actif">ACTIF</span>
+                    <h3>DGE & CENA</h3>
+                    <p>Direction Générale des Élections et Commission Électorale Nationale Autonome.</p>
+                    <div class="voir-plus">↓ Voir détails</div>
+                </div>
+                
+                <div class="section-card" onclick="document.getElementById('societe-civile').scrollIntoView({behavior: 'smooth'})">
+                    <span class="status actif">ACTIF</span>
+                    <h3>Société Civile</h3>
+                    <p>Observateurs indépendants et organisations citoyennes.</p>
+                    <div class="voir-plus">↓ Voir détails</div>
                 </div>
                 
                 <div class="section-card inactive">
                     <span class="status attente">Bientôt</span>
                     <h3>Conseil Constitutionnel</h3>
                     <p>Validation des résultats électoraux.</p>
-                    <p class="info-attente">Informations à venir</p>
-                </div>
-                
-                <div class="section-card inactive">
-                    <span class="status attente">Bientôt</span>
-                    <h3>Sociétés Civiles</h3>
-                    <p>Observateurs indépendants et organisations citoyennes.</p>
                     <p class="info-attente">Informations à venir</p>
                 </div>
                 
@@ -297,20 +362,20 @@
                 </div>
             </div>
 
-            <!-- Section Ministère de l'Intérieur (COMPLÈTE) -->
-            <section id="ministere" class="minister-profile">
-                <div class="minister-header">
-                    <img src="aziz.jpg" alt="Aziz Dieng" class="minister-photo">
-                    <div class="minister-info">
+            <!-- Section Ministère de l'Intérieur -->
+            <section id="ministere" class="profile-section">
+                <div class="profile-header">
+                    <img src="aziz.jpg" alt="Aziz Dieng" class="profile-photo">
+                    <div class="profile-info">
                         <h2>Aziz Dieng</h2>
-                        <p class="minister-title">Ministre de l'Intérieur de la République du Wakanda</p>
-                        <p class="minister-motto">"Sécurité, Innovation, Transparence"</p>
+                        <p class="profile-title">Ministre de l'Intérieur de la République du Wakanda</p>
+                        <p class="profile-motto">"Sécurité, Innovation, Transparence"</p>
                     </div>
                 </div>
                 
-                <div class="minister-content">
+                <div class="profile-content">
                     <h3>Discours sur MINIVOTE</h3>
-                    <div class="speech-excerpt">
+                    <div class="document-excerpt">
                         <p><strong>"Mesdames et Messieurs, concitoyens,</strong></p>
                         <p>L'histoire de la démocratie est une histoire d'évolution. Aujourd'hui, notre nation prend un virage décisif vers l'avenir. En ma qualité de Ministre de l'Intérieur, je suis fier d'annoncer que cette élection présidentielle sera administrée par notre nouvelle plateforme nationale : MINIVOTE.</p>
                         
@@ -329,7 +394,7 @@
                     </div>
 
                     <h3>Parcours Professionnel</h3>
-                    <div class="career-excerpt">
+                    <div class="document-excerpt">
                         <h4>Phase I : Serviteur de l'État (2012 – 2015)</h4>
                         <p><strong>Conseiller Technique</strong> auprès du Secrétaire Général du Ministère de l'Intérieur</p>
                         <ul>
@@ -357,6 +422,120 @@
                             <li>Réforme Électorale (MINIVOTE) : Introduction et sécurisation du vote numérique</li>
                             <li>Stratégie de Lutte Contre la Criminalité Organisée</li>
                             <li>Refonte de la Police de Proximité : Programme "Police Citoyenne"</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section DGE & CENA -->
+            <section id="dge-cena" class="institution-card">
+                <div class="institution-header">
+                    <div>
+                        <h2 style="color: #2c3e50; margin: 0;">Direction Générale des Élections & CENA</h2>
+                        <p class="profile-title">Sous la tutelle du Ministère de l'Intérieur</p>
+                    </div>
+                </div>
+                
+                <div class="profile-content">
+                    <h3>📋 Communiqué Officiel - Révision des Listes Électorales</h3>
+                    
+                    <div class="communique-section">
+                        <div class="communique-title">RÉPUBLIQUE DU WAKANDA - MINISTÈRE DE L'INTÉRIEUR - DIRECTION GÉNÉRALE DES ÉLECTIONS</div>
+                        
+                        <div class="important-date">
+                            <h4>📅 Période de révision :</h4>
+                            <p><strong>Du 8 septembre au 5 décembre 2025</strong></p>
+                        </div>
+                        
+                        <p>La directrice générale des élections informe les acteurs politiques et les citoyens qu'en application des dispositions des articles L.37 et R.28 du code électoral, une révision ordinaire des listes électorales sera organisée sur l'étendue du territoire national.</p>
+                        
+                        <h4>Opérations prévues :</h4>
+                        <ul>
+                            <li><strong>Inscriptions des nouveaux électeurs</strong> : Jeunes atteignant 18 ans avant la clôture</li>
+                            <li><strong>Modifications</strong> : Changement de circonscription ou d'adresse électorale</li>
+                            <li><strong>Changements de statut</strong> : Militaires/paramilitaires redevenus civils</li>
+                            <li><strong>Radiations</strong> : Décès, incapacité juridique ou radiation volontaire</li>
+                        </ul>
+                        
+                        <h4>📄 Documents requis :</h4>
+                        <ul>
+                            <li><strong>Obligatoire</strong> : Original de la carte nationale d'identité biométrique</li>
+                            <li><strong>Preuve de rattachement</strong> : Certificat de résidence, facture d'eau/électricité/téléphone (6 mois minimum)</li>
+                            <li><strong>Pour militaires/paramilitaires</strong> : Carte professionnelle ou attestation</li>
+                        </ul>
+                        
+                        <p><em>Les commissions administratives locales sont à la disposition des citoyens pour toute démarche.</em></p>
+                        
+                        <p style="text-align: right; font-style: italic;">Fait à Wakanda, le 28 août 2025<br>La Directrice Générale des Élections</p>
+                    </div>
+                    
+                    <div class="document-excerpt">
+                        <h4>Collaboration DGE-CENA</h4>
+                        <p>La <strong>Direction Générale des Élections (DGE)</strong> et la <strong>Commission Électorale Nationale Autonome (CENA)</strong> travaillent en étroite collaboration pour garantir :</p>
+                        <ul>
+                            <li>L'intégrité du processus électoral</li>
+                            <li>La transparence des opérations</li>
+                            <li>La fiabilité des listes électorales</li>
+                            <li>L'accessibilité du vote pour tous les citoyens</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section Société Civile -->
+            <section id="societe-civile" class="profile-section">
+                <div class="profile-header">
+                    <img src="marieme.jpg" alt="Marieme Sow Gueye : Présidente du VCUW" class="profile-photo">
+                    <div class="profile-info">
+                        <h2>Voix Civiles Unies du Wakanda (VCUW)</h2>
+                        <p class="profile-title">Organisation citoyenne indépendante</p>
+                        <p class="profile-motto">"Transparence, Participation, Cohésion Nationale"</p>
+                    </div>
+                </div>
+                
+                <div class="profile-content">
+                    <h3>Interview Exclusif - Membre de la VCUW</h3>
+                    
+                    <div class="interview-questions">
+                        <div class="question-item">
+                            <div class="question">1. Pouvez-vous vous présenter brièvement et rappeler votre parcours ?</div>
+                            <div class="reponse">« Je suis membre de Voix Civiles Unies du Wakanda (VCUW), une organisation citoyenne indépendante engagée dans la promotion de la participation citoyenne, de la transparence électorale et de la cohésion nationale. Notre parcours est marqué par des actions de sensibilisation civique, d'observation citoyenne et de plaidoyer en faveur de processus démocratiques inclusifs et crédibles. »</div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <div class="question">2. Quel est le rôle spécifique de votre organisation dans ce processus électoral ?</div>
+                            <div class="reponse">« VCUW intervient comme acteur d'observation citoyenne et de sensibilisation. Notre mission est de contribuer à la transparence du processus électoral, de prévenir les tensions et de renforcer la confiance des citoyens. »</div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <div class="question">3. Quels sont les principaux défis que vous anticipez ?</div>
+                            <div class="reponse">« Les défis incluent la désinformation, les inégalités d'accès au vote, les risques de contestation et la préservation d'un climat électoral apaisé. »</div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <div class="question">4. Comment évaluez-vous l'introduction du vote numérique MINIVOTE ?</div>
+                            <div class="reponse">« VCUW considère MINIVOTE comme une innovation prometteuse, à condition que des garanties solides soient mises en place : audits indépendants, sécurisation des données, traçabilité du vote et communication claire. »</div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <div class="question">5. Comment encouragez-vous la participation citoyenne ?</div>
+                            <div class="reponse">« Par des campagnes de sensibilisation, des formations et l'usage des médias. Nous avons également mis en place un système de signalement citoyen, des points focaux et des outils numériques pour les plaintes. »</div>
+                        </div>
+                        
+                        <div class="question-item">
+                            <div class="question">6. Quel message adressez-vous aux citoyens wakandais ?</div>
+                            <div class="reponse">« Nous appelons les citoyens à voter de manière libre, responsable et pacifique. Nous attendons des candidats et des institutions le respect des règles, la transparence, l'équité et la neutralité institutionnelle. »</div>
+                        </div>
+                    </div>
+                    
+                    <div class="document-excerpt">
+                        <h4>Engagements de la VCUW :</h4>
+                        <ul>
+                            <li><strong>Observation citoyenne</strong> : Formation d'observateurs indépendants</li>
+                            <li><strong>Sensibilisation</strong> : Campagnes d'information et d'éducation civique</li>
+                            <li><strong>Transparence</strong> : Surveillance du processus électoral</li>
+                            <li><strong>Médiation</strong> : Prévention et gestion des conflits</li>
+                            <li><strong>Plaidoyer</strong> : Défense des droits électoraux des citoyens</li>
                         </ul>
                     </div>
                 </div>
@@ -407,6 +586,24 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Smooth scrolling for section cards
+        document.querySelectorAll('.section-card').forEach(card => {
+            if (!card.classList.contains('inactive')) {
+                card.addEventListener('click', function() {
+                    const targetId = this.onclick.toString().match(/'([^']+)'/)[1];
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            }
+        });
+    </script>
 
     <script src="script.js"></script>
 </body>

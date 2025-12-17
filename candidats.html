@@ -6,6 +6,8 @@
     <title>Candidats - BATBI Presse</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* Styles spécifiques pour la section Programme Politique */
+        
         .candidats-container {
             max-width: 1200px;
             margin: 40px auto;
@@ -74,6 +76,125 @@
             font-weight: bold;
             font-size: 1.1em;
             font-style: italic;
+        }
+        
+        /* NOUVEAU : Système d'onglets pour les programmes */
+        .programme-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .programme-tabs {
+            margin-bottom: 30px;
+        }
+        
+        .tab-buttons {
+            display: flex;
+            border-bottom: 2px solid #dee2e6;
+            margin-bottom: 20px;
+        }
+        
+        .tab-btn {
+            padding: 12px 25px;
+            background: #fff;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-weight: 600;
+            color: #6c757d;
+            transition: all 0.3s ease;
+            font-size: 1em;
+        }
+        
+        .tab-btn:hover {
+            color: #007bff;
+            background: #f8f9fa;
+        }
+        
+        .tab-btn.active {
+            color: #007bff;
+            border-bottom-color: #007bff;
+            background: #f8f9fa;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px 0;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Styles spécifiques pour le contenu des programmes */
+        .programme-content {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 15px;
+        }
+        
+        .programme-content h3 {
+            color: #2c3e50;
+            margin: 25px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #007bff;
+            font-size: 1.4em;
+        }
+        
+        .programme-content h4 {
+            color: #495057;
+            margin: 20px 0 10px 0;
+            font-size: 1.2em;
+        }
+        
+        .programme-content p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        
+        .programme-content ul {
+            margin: 15px 0 15px 20px;
+        }
+        
+        .programme-content li {
+            color: #555;
+            margin-bottom: 8px;
+            line-height: 1.6;
+            padding-left: 5px;
+        }
+        
+        .citation-programme {
+            background: #e3f2fd;
+            padding: 20px;
+            border-left: 4px solid #007bff;
+            margin: 20px 0;
+            font-style: italic;
+            color: #1a237e;
+            border-radius: 8px;
+            font-size: 1.1em;
+        }
+        
+        .budget-info {
+            background: #f1f8e9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #4caf50;
+            font-size: 0.95em;
+        }
+        
+        .budget-info strong {
+            color: #2e7d32;
         }
         
         .candidat-section {
@@ -189,6 +310,22 @@
                 height: 160px;
             }
             
+            .tab-buttons {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                text-align: center;
+                border-bottom: none;
+                border-right: 3px solid transparent;
+                border-bottom: 1px solid #dee2e6;
+            }
+            
+            .tab-btn.active {
+                border-right-color: #007bff;
+                border-bottom-color: #dee2e6;
+            }
+            
             .mots-cles {
                 flex-direction: column;
                 align-items: center;
@@ -216,17 +353,145 @@
         <h1 class="candidats-title">🗳️ Candidats à l'Élection Présidentielle du Wakanda</h1>
         
         <div class="candidats-grid">
-            <!-- Candidat 1 : Mareme Ndir -->
+            <!-- Candidat 1 : Mareme Ndir - ARW -->
             <div class="candidat-card">
                 <div class="candidat-header">
                     <img src="mareme.jpg" alt="Marème Ndir" class="candidat-photo">
                     <div class="candidat-info">
                         <h2>MAREME NDIR</h2>
-                        <div class="parti">Présidente du Alliance pour le Renouveau-Wakanda (ARW)</div>
-                        <div class="slogan">"Justice – Transparence – Renouveau"</div>
+                        <div class="parti">Présidente de l'Alliance pour le Renouveau-Wakanda (ARW)</div>
+                        <div class="slogan">"Le renouveau rugit, le peuple se relève"</div>
                     </div>
                 </div>
                 
+                <!-- NOUVELLE SECTION : Programme Politique ARW -->
+                <div class="programme-section">
+                    <h3>📋 Programme Politique</h3>
+                    
+                    <div class="programme-tabs">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" onclick="openTab('programme-arw', this)">Vision & Axes</button>
+                            <button class="tab-btn" onclick="openTab('details-arw', this)">Détails par Secteur</button>
+                            <button class="tab-btn" onclick="openTab('budgets-arw', this)">Budgets Estimés</button>
+                        </div>
+                        
+                        <!-- Onglet 1 : Vision & Axes -->
+                        <div id="programme-arw" class="tab-content active">
+                            <div class="programme-content">
+                                <div class="citation-programme">
+                                    "Le renouveau rugit, le peuple se relève - Bâtir un État Souverain et Juste"
+                                </div>
+                                
+                                <h3>I. Vision Générale : Un Renouveau Profond</h3>
+                                <p><strong>Un Projet de Rupture Responsable</strong></p>
+                                <p>L'AR Wakanda porte un projet ambitieux de transformation, visant à instaurer une gouvernance moderne et efficace, répondant aux attentes du peuple.</p>
+                                <p><strong>Bâtir un État Souverain et Juste</strong></p>
+                                <p>Notre ambition est de construire un État fort, productif et inclusif, garantissant dignité, emploi et prospérité à chaque citoyen.</p>
+                                
+                                <h3>II. Les 8 Axes Stratégiques</h3>
+                                <ul>
+                                    <li><strong>1. Gouvernance & Lutte anti-corruption :</strong> Restaurer la confiance, mettre fin à l'impunité</li>
+                                    <li><strong>2. Souveraineté économique :</strong> Transformer consommation en production</li>
+                                    <li><strong>3. Employabilité des jeunes :</strong> "La jeunesse n'est pas un problème, elle est la solution"</li>
+                                    <li><strong>4. Éducation & Capital humain :</strong> Former une élite nationale compétente</li>
+                                    <li><strong>5. Santé & Protection sociale :</strong> Accès universel aux soins</li>
+                                    <li><strong>6. Femmes & Égalité :</strong> Autonomisation économique</li>
+                                    <li><strong>7. Sécurité & Défense :</strong> Forces modernes et républicaines</li>
+                                    <li><strong>8. Environnement :</strong> Développement durable</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Onglet 2 : Détails par Secteur -->
+                        <div id="details-arw" class="tab-content">
+                            <div class="programme-content">
+                                <h3>Mesures Clés par Secteur</h3>
+                                
+                                <h4>Gouvernance & État de Droit</h4>
+                                <ul>
+                                    <li>Audit général de l'État dès les 100 premiers jours</li>
+                                    <li>Digitalisation complète de l'administration</li>
+                                    <li>Tolérance zéro pour les détournements</li>
+                                    <li>Publication annuelle du patrimoine des hauts responsables</li>
+                                </ul>
+                                
+                                <h4>Économie Productive</h4>
+                                <ul>
+                                    <li>Transformation locale des ressources naturelles</li>
+                                    <li>Soutien renforcé aux PME/PMI locales</li>
+                                    <li>Réforme fiscale équitable</li>
+                                    <li>Lutte acharnée contre l'évasion fiscale</li>
+                                </ul>
+                                
+                                <h4>Jeunesse & Emploi</h4>
+                                <ul>
+                                    <li>Stages rémunérés État-entreprises</li>
+                                    <li>Incitations fiscales pour les recruteurs de jeunes</li>
+                                    <li>Fonds souverain dédié aux startups</li>
+                                    <li>Simplification radicale des procédures de création d'entreprise</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Onglet 3 : Budgets Estimés -->
+                        <div id="budgets-arw" class="tab-content">
+                            <div class="programme-content">
+                                <h3>Budget Estimatif Annuel du Programme</h3>
+                                
+                                <div class="budget-info">
+                                    <strong>Gouvernance & digitalisation :</strong> 150 milliards FCFA
+                                </div>
+                                
+                                <div class="budget-info">
+                                    <strong>Lutte anticorruption & contrôle :</strong> 50 milliards FCFA
+                                </div>
+                                
+                                <div class="budget-info">
+                                    <strong>Industrialisation et production :</strong> 600 milliards FCFA
+                                </div>
+                                
+                                <div class="budget-info">
+                                    <strong>Soutien aux PME/PMI :</strong> 200 milliards FCFA
+                                </div>
+                                
+                                <div class="budget-info">
+                                    <strong>Employabilité & formation :</strong> 400 milliards FCFA
+                                </div>
+                                
+                                <div class="budget-info">
+                                    <strong>Entrepreneuriat jeunes :</strong> 250 milliards FCFA
+                                </div>
+                                
+                                <div class="budget-info">
+                                    <strong>Éducation & enseignement supérieur :</strong> 500 milliards FCFA
+                                </div>
+                                
+                                <div class="budget-info">
+                                    <strong>Santé & protection sociale :</strong> 450 milliards FCFA
+                                </div>
+                                
+                                <div class="budget-info">
+                                    <strong>Programmes femmes :</strong> 150 milliards FCFA
+                                </div>
+                                
+                                <div class="budget-info">
+                                    <strong>Sécurité & défense :</strong> 350 milliards FCFA
+                                </div>
+                                
+                                <div class="budget-info">
+                                    <strong>Environnement & énergie verte :</strong> 200 milliards FCFA
+                                </div>
+                                
+                                <p style="margin-top: 20px; font-weight: bold; color: #2c3e50;">
+                                    TOTAL ESTIMÉ : 3,3 billions FCFA
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIN SECTION PROGRAMME ARW -->
+                
+                <!-- Biographie (existant) -->
                 <div class="candidat-section">
                     <h3>Biographie</h3>
                     <p><strong>Mareme Ndir, 37 ans</strong>, candidate à l'élection présidentielle du Wakanda.</p>
@@ -237,6 +502,7 @@
                     "Je crois profondément que gouverner, ce n'est pas promettre sans agir, mais servir le peuple et rendre des comptes de manière transparente."
                 </div>
                 
+                <!-- Interview (existant) -->
                 <div class="candidat-section">
                     <h3>Interview Exclusif</h3>
                     <div class="interview-questions">
@@ -277,17 +543,120 @@
                 </div>
             </div>
             
-            <!-- Candidat 2 : Abakar Adam Adami -->
+            <!-- Candidat 2 : Abakar Adam Adami - RFE -->
             <div class="candidat-card">
                 <div class="candidat-header">
                     <img src="adami.jpg" alt="Abakar Adam Adami" class="candidat-photo">
                     <div class="candidat-info">
                         <h2>ABAKAR ADAM ADAMI</h2>
                         <div class="parti">Président du Rassemblement des Forces Émergentes (RFE)</div>
-                        <div class="slogan">"Rupture – Justice – Avenir"</div>
+                        <div class="slogan">"Wakanda Émergent, Juste et Solidaire"</div>
                     </div>
                 </div>
                 
+                <!-- NOUVELLE SECTION : Programme Politique RFE -->
+                <div class="programme-section">
+                    <h3>📋 Programme Politique</h3>
+                    
+                    <div class="programme-tabs">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" onclick="openTab('vision-rfe', this)">Vision & Principes</button>
+                            <button class="tab-btn" onclick="openTab('secteurs-rfe', this)">Secteurs Prioritaires</button>
+                            <button class="tab-btn" onclick="openTab('engagements-rfe', this)">Engagements Concrets</button>
+                        </div>
+                        
+                        <!-- Onglet 1 : Vision & Principes -->
+                        <div id="vision-rfe" class="tab-content active">
+                            <div class="programme-content">
+                                <div class="citation-programme">
+                                    "Wakanda Émergent, Juste et Solidaire - Le mérite primera sur l'appartenance, la compétence sur la proximité"
+                                </div>
+                                
+                                <h3>Préambule : Un pacte avec le peuple wakandais</h3>
+                                <p><strong>Le Rassemblement des Forces Émergentes (RFE) n'est pas un parti politique comme les autres.</strong> Il est avant tout un mouvement citoyen, né de l'exaspération populaire, de la jeunesse consciente, des travailleurs honnêtes et de tous ceux qui refusent que le Wakanda reste prisonnier d'un système usé.</p>
+                                
+                                <p>Nous sommes <strong>antisystémiques</strong>, non par posture, mais par responsabilité. Antisystémiques parce que le système actuel a banalisé l'injustice, normalisé la médiocrité et institutionnalisé le clientélisme.</p>
+                                
+                                <p><strong>Notre engagement est clair : le mérite primera sur l'appartenance, la compétence sur la proximité, le service du peuple sur les intérêts personnels.</strong> Sous un régime dirigé par le RFE, le clientélisme, le favoritisme et la politique des réseaux seront combattus sans faiblesse.</p>
+                                
+                                <h3>Notre Philosophie</h3>
+                                <ul>
+                                    <li><strong>Antisystémique par conviction :</strong> Rupture avec les pratiques clientélistes</li>
+                                    <li><strong>Méritocratie absolue :</strong> La compétence avant les relations</li>
+                                    <li><strong>Transparence totale :</strong> Redevabilité envers les citoyens</li>
+                                    <li><strong>Justice sociale :</strong> Équité dans l'accès aux opportunités</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Onglet 2 : Secteurs Prioritaires -->
+                        <div id="secteurs-rfe" class="tab-content">
+                            <div class="programme-content">
+                                <h3>Les 6 Piliers de la Refondation</h3>
+                                
+                                <h4>I. Refonder l'État et restaurer la confiance</h4>
+                                <ul>
+                                    <li><strong>État exemplaire et intègre :</strong> Tolérance zéro contre la corruption</li>
+                                    <li><strong>Justice indépendante :</strong> Accès gratuit pour les plus vulnérables</li>
+                                    <li><strong>Démocratie vivante :</strong> Renforcement du contrôle parlementaire</li>
+                                </ul>
+                                
+                                <h4>II. Dignité sociale et justice pour tous</h4>
+                                <ul>
+                                    <li><strong>Santé :</strong> Assurance maladie universelle progressive</li>
+                                    <li><strong>Éducation :</strong> Gratuité réelle de l'école de base</li>
+                                    <li><strong>Protection sociale :</strong> Allocation minimale de solidarité</li>
+                                </ul>
+                                
+                                <h4>III. Économie productive et souveraine</h4>
+                                <ul>
+                                    <li><strong>Création d'emplois :</strong> Programme national pour les jeunes</li>
+                                    <li><strong>Industrialisation :</strong> Transformation locale des ressources</li>
+                                    <li><strong>Monde rural :</strong> Modernisation de l'agriculture</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Onglet 3 : Engagements Concrets -->
+                        <div id="engagements-rfe" class="tab-content">
+                            <div class="programme-content">
+                                <h3>Engagements Mesurables</h3>
+                                
+                                <h4>Contre la Corruption</h4>
+                                <ul>
+                                    <li>Création d'une Cour spéciale anticorruption</li>
+                                    <li>Protection renforcée des lanceurs d'alerte</li>
+                                    <li>Publication obligatoire du patrimoine des hauts responsables</li>
+                                    <li>Numérisation des procédures pour réduire l'arbitraire</li>
+                                </ul>
+                                
+                                <h4>Pour la Jeunesse</h4>
+                                <ul>
+                                    <li>Programme national d'emplois publics et communautaires</li>
+                                    <li>Fonds d'amorçage pour l'entrepreneuriat jeune et féminin</li>
+                                    <li>Réforme des programmes éducatifs vers les sciences et le numérique</li>
+                                    <li>Participation des jeunes à la décision publique</li>
+                                </ul>
+                                
+                                <h4>Développement Territorial</h4>
+                                <ul>
+                                    <li>Transfert réel de compétences aux régions</li>
+                                    <li>Budgets participatifs locaux</li>
+                                    <li>Programme national de logements sociaux</li>
+                                    <li>Accès universel à l'eau potable et à l'électricité</li>
+                                </ul>
+                                
+                                <div class="citation-programme">
+                                    "Ce programme n'est pas une promesse de plus. C'est un chemin collectif. Il appelle au courage, à la discipline et à l'amour du Wakanda.<br><br>
+                                    <strong>Le Wakanda peut. Le Wakanda doit. Le Wakanda réussira.</strong>"
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- FIN SECTION PROGRAMME RFE -->
+                
+                <!-- Biographie (existant) -->
                 <div class="candidat-section">
                     <h3>Biographie</h3>
                     <p><strong>Abakar Adam Adami, 35 ans</strong> (né le 29 décembre 1990). Fils d'une enseignante et d'un médecin, élevé par sa mère seule après le décès précoce de son père.</p>
@@ -299,6 +668,7 @@
                     "C'est fort de ce parcours, de ces renoncements assumés et de cette fidélité à mes valeurs que j'ai décidé de me présenter à l'élection présidentielle, avec une seule ambition : sortir le Wakanda des griffes des maux qui le rongent à petit feu, malgré l'immensité de ses richesses, et remettre l'État au service de son peuple."
                 </div>
                 
+                <!-- Interview (existant) -->
                 <div class="candidat-section">
                     <h3>Interview Exclusif</h3>
                     <div class="interview-questions">
@@ -352,5 +722,28 @@
         <p style="margin: 5px 0 0 0; color: #999; font-size: 0.8em;">Dernière mise à jour : Présentation des deux candidats avec interviews complets</p>
     </footer>
 
+    <script>
+        // Fonction pour gérer les onglets
+        function openTab(tabId, element) {
+            // Désactiver tous les onglets du même conteneur
+            const tabContainer = element.parentElement.parentElement;
+            const tabContents = tabContainer.querySelectorAll('.tab-content');
+            const tabButtons = tabContainer.querySelectorAll('.tab-btn');
+            
+            // Cacher tous les contenus
+            tabContents.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Désactiver tous les boutons
+            tabButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Activer l'onglet sélectionné
+            document.getElementById(tabId).classList.add('active');
+            element.classList.add('active');
+        }
+    </script>
 </body>
 </html>
